@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { LoginPage } from "../auth";
-import { HeroesRoutes } from "../heroes";
+import { HeroesRouter } from "../heroes";
 
 export const AppRouter = () => {
   return (
     <>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/*" element={<HeroesRoutes />} />
+        <Route path="/*" element={<HeroesRouter />} />
       </Routes>
     </>
   );
