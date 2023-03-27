@@ -4,6 +4,7 @@ import queryString from "query-string";
 import { useForm } from "../../shared/hooks/useForm";
 import { HeroCard } from "../components";
 import { getHeroByName } from "../helpers";
+import { useMemo } from "react";
 
 export const SearchPage = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export const SearchPage = () => {
   const { search } = useLocation();
   const { q = "" } = queryString.parse(search);
 
-  const heroes = getHeroByName(q);
+  const heroes = useMemo(() => getHeroByName(q), [q]);
 
   const { searchText, onInputChange } = useForm({
     searchText: q,
@@ -68,7 +69,7 @@ export const SearchPage = () => {
           </div>
 
           {heroes.map((hero) => (
-            <div className="mt-2">
+            <div className="mt-2" key={hero.id}>
               <HeroCard key={hero.id} {...hero} />
             </div>
           ))}
