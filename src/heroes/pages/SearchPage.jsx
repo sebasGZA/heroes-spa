@@ -13,9 +13,12 @@ export const SearchPage = () => {
 
   const heroes = getHeroByName(q);
 
-  const { searchText, onInputChange, onResetForm } = useForm({
+  const { searchText, onInputChange } = useForm({
     searchText: q,
   });
+
+  const showSearch = q.length === 0;
+  const showError = q.length > 0 && heroes.length === 0;
 
   const onSearchSubmit = (event) => {
     event.preventDefault();
@@ -50,15 +53,19 @@ export const SearchPage = () => {
           <h4>Results</h4>
           <hr />
 
-          {(!q || q.trim().length == 0) && (
-            <div className="alert alert-primary">Search a hero</div>
-          )}
+          <div
+            className="alert alert-primary animate__animated aminate__fadeIn"
+            style={{ display: showSearch ? "block" : "none" }}
+          >
+            Search a hero
+          </div>
 
-          {q && heroes.length === 0 && (
-            <div className="alert alert-danger">
-              There is no result with <b>{q}</b>
-            </div>
-          )}
+          <div
+            className="alert alert-danger animate__animated aminate__fadeIn"
+            style={{ display: showError ? `block` : "none" }}
+          >
+            There is no result with <b>{q}</b>
+          </div>
 
           {heroes.map((hero) => (
             <div className="mt-2">
