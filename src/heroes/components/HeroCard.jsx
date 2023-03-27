@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 
-const CharactersByHero = ({ characters, alter_ego }) => {
-  if (alter_ego === characters) return <></>;
-  return <p>{characters} </p>;
-};
+const CharactersByHero = ({ characters, alter_ego }) =>
+  alter_ego === characters ? <></> : <p>{characters} </p>;
 
 export const HeroCard = ({
   id,
