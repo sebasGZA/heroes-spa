@@ -33,7 +33,7 @@ describe("Test inn <PublicRouter />", () => {
 
     render(
       <AuthContext.Provider value={contextValue}>
-        <MemoryRouter initialEntries={["/login"]}>
+        <MemoryRouter initialEntries={["/marvel"]}>
           <Routes>
             <Route
               path="/login"
