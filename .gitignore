@@ -27,3 +27,4 @@ dist-ssr
 # Jest
 
 src/tests/router/__snapshots__
+src/tests/heroes/pages/__snapshots__
