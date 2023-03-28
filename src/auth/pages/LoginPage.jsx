@@ -5,16 +5,14 @@ import { AuthContext } from "../context";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const { logged, login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const onLogin = () => {
     login("Sebas Gomez");
 
-    if (logged) {
-      navigate("/", {
-        replace: true,
-      });
-    }
+    navigate("/", {
+      replace: true,
+    });
   };
 
   return (
