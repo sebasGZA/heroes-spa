@@ -4,7 +4,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { AuthContext } from "../../auth/context";
 import { PublicRouter } from "../../router/PublicRouter";
 
-describe("Test inn <PublicRouter />", () => {
+describe("Test in <PublicRouter />", () => {
   test("should show children if it is not authenticated", () => {
     const contextValue = {
       logged: false,
