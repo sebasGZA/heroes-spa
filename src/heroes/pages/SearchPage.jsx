@@ -62,6 +62,7 @@ export const SearchPage = () => {
           </div>
 
           <div
+            aria-label="alert-danger"
             className="alert alert-danger animate__animated aminate__fadeIn"
             style={{ display: showError ? `block` : "none" }}
           >
